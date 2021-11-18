@@ -1,0 +1,12 @@
+---
+- hosts: devserver
+  tasks:
+    - name: copy jar file to nexus server
+      maven_artifact:
+        group_id: org.springframework
+        artifact_id: gs-spring-boot
+        version: "{{  Downloadedversion  }}"
+        repository_url: 'http://18.119.100.170:8081/repository/maven-releases/'
+        username: 'admin'
+        password: 'shashisneha'
+        dest: /opt
